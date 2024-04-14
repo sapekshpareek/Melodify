@@ -6,6 +6,9 @@ const passport = require("passport");
 const JwtStrategy = require("passport-jwt").Strategy,
   ExtractJwt = require("passport-jwt").ExtractJwt;
 const User = require("./models/user");
+const authRoutes = require("./routes/auth");
+
+app.use(express.json());
 
 mongoose
   .connect(
@@ -49,7 +52,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-
+app.use("/auth", authRoutes);
 
 app.listen(8080, () => {
   console.log("Server in running on http://localhost:8080/");
