@@ -19,8 +19,8 @@ mongoose
       process.env.MONGO_PASS +
       "@cluster0.30aowyu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
     {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     }
   )
   .then((x) => {
@@ -35,7 +35,7 @@ opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = process.env.SECRET;
 passport.use(
   new JwtStrategy(opts, function (jwt_payload, done) {
-    User.findOne({ id: jwt_payload.sub }, function (err, user) {
+    User.findOne({ _id: jwt_payload.identifier }, function (err, user) {
       if (err) {
         return done(err, false);
       }

@@ -15,7 +15,7 @@ router.post("/register", async (req, res) => {
     return res.status(403).json({ error: "Username Should be Unique!" });
   }
 
-  const hashedPassword = bcrypt.hash(password, 10);
+  const hashedPassword = await bcrypt.hash(password, 10);
   const newUserData = {
     email,
     password: hashedPassword,
