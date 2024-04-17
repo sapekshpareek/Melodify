@@ -8,6 +8,7 @@ const JwtStrategy = require("passport-jwt").Strategy,
 const User = require("./models/user");
 const authRoutes = require("./routes/auth");
 const songRoutes = require("./routes/song");
+const playlistRoutes = require("./routes/playlist");
 
 app.use(express.json());
 
@@ -55,6 +56,7 @@ app.get("/", (req, res) => {
 
 app.use("/auth", authRoutes);
 app.use("/song", songRoutes);
+app.use("/playlist", playlistRoutes);
 
 app.listen(8080, () => {
   console.log("Server in running on http://localhost:8080/");
