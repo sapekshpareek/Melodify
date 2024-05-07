@@ -21,7 +21,7 @@ router.post(
       owner: currentUser._id,
       collaborators: [],
     };
-    const playlist = await playlist.create(playlistData);
+    const playlist = await Playlist.create(playlistData);
     return res.status(200).json(playlist);
   }
 );
