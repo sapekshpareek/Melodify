@@ -31,7 +31,7 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     const playlistId = req.params.playlistId;
-    const playlist = await Playlist.fineOne({ _id: playlistId });
+    const playlist = await Playlist.findOne({ _id: playlistId });
     if (!playlist) {
       return res.status(301).json({ err: "Invalid ID" });
     }
@@ -52,7 +52,9 @@ router.get(
   }
 );
 
-router.post("/add/song", passport.authenticate("jwt", { session: false })),
+router.post(
+    "/add/song",
+  passport.authenticate("jwt", { session: false }),
   async (req, res) => {
     const currentUser = req.user;
     const { playlistId, songId } = req.body;
@@ -75,6 +77,7 @@ router.post("/add/song", passport.authenticate("jwt", { session: false })),
     await playlist.save();
 
     return res.status(200).json(playlist);
-  };
+  }
+);
 
 module.exports = router;
