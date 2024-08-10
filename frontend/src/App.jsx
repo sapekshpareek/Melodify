@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginComponent from "./routes/Login";
+import SignupComponent from "./routes/Signup";
 // import './App.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<div>hi</div>}></Route>
           <Route path="/login" element={ <LoginComponent/> }></Route>
+          <Route path="/signup" element={ <SignupComponent/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>
