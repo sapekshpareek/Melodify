@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomeComponent from "./routes/Home";
 import LoginComponent from "./routes/Login";
 import SignupComponent from "./routes/Signup";
 // import './App.css'
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<div>hi</div>}></Route>
           <Route path="/login" element={ <LoginComponent/> }></Route>
           <Route path="/signup" element={ <SignupComponent/> }></Route>
+          <Route path="/home" element={ <HomeComponent/> }></Route>
         </Routes>
       </BrowserRouter>
     </div>

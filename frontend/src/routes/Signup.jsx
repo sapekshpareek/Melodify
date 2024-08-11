@@ -6,7 +6,7 @@ import TextInput from "../components/shared/TextInput";
 const SignupComponent = () => {
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <div className="logo p-5 border-b border-solid border-grey-200 w-full flex justify-center">
+      <div className="logo p-5 border-b border-solid border-gray-200 w-full flex justify-center">
         <Icon icon="logos:spotify" width={150} />
       </div>
       <div className="inputRegion w-1/3 py-10 flex flex-col justify-center items-center">
@@ -38,7 +38,7 @@ const SignupComponent = () => {
             SIGN UP
           </button>
         </div>
-        <div className="w-full border border-solid border-grey-400 mt-6"></div>
+        <div className="w-full border border-solid border-gray-400 mt-6"></div>
         <div className="font-semibold mt-8">Already have a account?</div>
         <RoundedButton
           placeholder="LOG IN TO SPOTIFY"
