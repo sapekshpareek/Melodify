@@ -30,7 +30,7 @@ const LoginComponent = () => {
         <div className="font-semibold mt-8">Don't have a account?</div>
         <RoundedButton
         placeholder="SIGN UP FOR SPOTIFY"
-        className="my-5"
+        className="my-5 w-full border-gray-500 text-gray-500"
         path="/signup"/>
       </div>
     </div>

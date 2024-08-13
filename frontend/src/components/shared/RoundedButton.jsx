@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 const RoundedButton = ({ placeholder, className, path, iconName }) => {
   return (
     <button
-      className={`border border-solid border-gray-500 rounded-full w-full py-3 my-2 text-base text-gray-500 font-semibold ${className}`}
+      className={`border border-solid rounded-full py-3 my-2 text-base font-semibold ${className}`}
     >
-      <div className="flex items-center justify-center">
-        <div className="px-2">
-          <Icon icon={iconName} />
+      <Link to={path}>
+        <div className="flex items-center justify-center px-2">
+          <div className={`${iconName?"pr-2":"pr-0"}`}>
+            <Icon icon={iconName} />
+          </div>
+          {placeholder}
         </div>
-        <Link to={path}>{placeholder}</Link>
-      </div>
+      </Link>
     </button>
   );
 };

@@ -42,7 +42,7 @@ const SignupComponent = () => {
         <div className="font-semibold mt-8">Already have a account?</div>
         <RoundedButton
           placeholder="LOG IN TO SPOTIFY"
-          className="my-5"
+          className="my-5 w-full border-gray-500 text-gray-500"
           path="/login"
         />
       </div>
