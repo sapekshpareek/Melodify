@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="h-full w-full flex">
       <Sidebar/>
-      <div className="h-full w-full bg-app-black">
+      <div className="h-full w-full bg-app-black overflow-auto">
         <Navbar/>
         <Content/>
       </div>
